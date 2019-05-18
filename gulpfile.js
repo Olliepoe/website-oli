@@ -10,31 +10,32 @@ function minifyCss() {
     return gulp.src('css/oli.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('dist/css'));
 };
 
 // Minify JS
 function minifyJs() {
-    return gulp.src('js/agency.js')
+    return gulp.src('js/oli.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('js'));
+        .pipe(gulp.dest('dist/js'));
 };
 
 // Bring third party dependencies from node_modules into vendor directory
 function copy() {
-    // Bootstrap
-    var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
-        .pipe(gulp.dest('./vendor/bootstrap'));
-    // Font Awesome
-    var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
-        .pipe(gulp.dest('./vendor'));
-    // jQuery
+    var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*').pipe(gulp.dest('./dist/vendor/bootstrap'));
+    var fontAwesome = gulp.src('./node_modules/font-awesome/**/*').pipe(gulp.dest('./dist/vendor/font-awesome'));
     var jquery = gulp.src([
         './node_modules/jquery/dist/*',
         '!./node_modules/jquery/dist/core.js'
-    ]).pipe(gulp.dest('./vendor/jquery'));
+    ]).pipe(gulp.dest('./dist/vendor/jquery'));
     return merge(bootstrap, fontAwesome, jquery);
+}
+
+function html() {
+    const img = gulp.src('img/**/*').pipe(gulp.dest('dist/img'));
+    const html = gulp.src('index.html').pipe(gulp.dest('dist'));
+    return merge(img,html);
 }
 
 function css() {
@@ -44,4 +45,4 @@ function css() {
 }
 
 // Run everything
-gulp.task("default", gulp.series(css, gulp.parallel(minifyJs, minifyCss, copy)));
+gulp.task("default", gulp.series(css, gulp.parallel(minifyJs, minifyCss, copy, html)));
