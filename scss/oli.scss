@@ -64,13 +64,13 @@ h1, h2, h3, h4, h5, h6 {
 // Restyled Primary Buttons
 
 .btn-primary {
-    @include button-variant(white, $theme-primary, $theme-primary);
+    @include button-variant(white, $theme-secondary, $theme-secondary);
     @include heading-font;
     font-weight: 700;
 }
 
 .btn-xl {
-    @include button-variant(white, $theme-primary, $theme-primary);
+    @include button-variant(white, $theme-secondary, $theme-secondary);
     @include heading-font;
     font-weight: 700;
     border-radius: 3px;
@@ -80,32 +80,29 @@ h1, h2, h3, h4, h5, h6 {
 
 // Custom Navigation Bar
 #mainNav {
-    background-color: $gray-900;
+    background-color: transparent;
     .navbar-toggler {
         font-size: 12px;
         right: 0;
         padding: 13px;
-        text-transform: uppercase;
         color: white;
         border: 0;
         background-color: $primary;
         @include heading-font;
     }
     .navbar-brand {
-        color: $primary;
-        @include script-font;
+        @include heading-font;
         &.active,
         &:active,
         &:focus,
         &:hover {
-            color: darken($primary, 10%);
+            color: $theme-primary;
         }
     }
     .navbar-nav {
         .nav-item {
             .nav-link {
-                font-size: 90%;
-                font-weight: 400;
+                font-size: 18px;
                 padding: 0.75em 0;
                 letter-spacing: 1px;
                 color: white;
@@ -122,11 +119,10 @@ h1, h2, h3, h4, h5, h6 {
     #mainNav {
         padding-top: 25px;
         padding-bottom: 25px;
-        -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-        -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-        transition: padding-top 0.3s, padding-bottom 0.3s;
+        -webkit-transition: padding-top 0.3s, padding-bottom 0.3s,background-color .3s;
+        -moz-transition: padding-top 0.3s, padding-bottom 0.3s,background-color .3s;
+        transition: padding-top 0.3s, padding-bottom 0.3s,background-color .3s;
         border: none;
-        background-color: transparent;
         .navbar-brand {
             font-size: 1.75em;
             -webkit-transition: all 0.3s;
@@ -143,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
         &.navbar-shrink {
             padding-top: 0;
             padding-bottom: 0;
-            background-color: $gray-900;
+            background-color: #613A43;
             .navbar-brand {
                 font-size: 1.25em;
                 padding: 12px 0;
@@ -185,18 +181,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('../img/header-bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    @include background-cover;
     text-align: center;
-    color: white;
+    background-color: #ffbcc3;
+    color: #fff;
     .intro-text {
         padding-top: 100px;
         padding-bottom: 50px;
         .intro-lead-in {
-            @include serif-font;
+            @include heading-font;
             font-style: italic;
             font-size: 22px;
             line-height: 22px;

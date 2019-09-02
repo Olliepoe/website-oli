@@ -34,7 +34,7 @@ function copy() {
 
 function html() {
     const img = gulp.src('img/**/*').pipe(gulp.dest('dist/img'));
-    const html = gulp.src('index.html').pipe(gulp.dest('dist'));
+    const html = gulp.src(['index.html', 'robots.txt']).pipe(gulp.dest('dist'));
     return merge(img,html);
 }
 

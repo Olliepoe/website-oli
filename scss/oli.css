@@ -8,7 +8,7 @@ body {
 }
 
 .text-primary {
-  color: #fed136;
+  color: #6cbf84;
 }
 
 p {
@@ -29,19 +29,18 @@ a.active {
 }
 
 a {
-  color: #fed136;
+  color: #6cbf84;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #fec503;
+  color: #4bad67;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   font-weight: 700;
 }
 
@@ -59,50 +58,48 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #4c586f;
+  border-color: #4c586f;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   font-weight: 700;
 }
 .btn-primary:focus, .btn-primary.focus {
   color: white;
-  background-color: #fec503;
-  border-color: #b48b01;
+  background-color: #374051;
+  border-color: #181c23;
 }
 .btn-primary:hover {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #374051;
+  border-color: #333b4b;
 }
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #374051;
+  border-color: #333b4b;
 }
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open > .btn-primary.dropdown-toggle:hover, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle.focus {
   color: white;
-  background-color: #dcab01;
-  border-color: #b48b01;
+  background-color: #292f3c;
+  border-color: #181c23;
 }
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
   background-image: none;
 }
 .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #4c586f;
+  border-color: #4c586f;
 }
 .btn-primary .badge {
-  color: #fed136;
+  color: #4c586f;
   background-color: white;
 }
 
 .btn-xl {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #4c586f;
+  border-color: #4c586f;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
@@ -110,79 +107,73 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-xl:focus, .btn-xl.focus {
   color: white;
-  background-color: #fec503;
-  border-color: #b48b01;
+  background-color: #374051;
+  border-color: #181c23;
 }
 .btn-xl:hover {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #374051;
+  border-color: #333b4b;
 }
 .btn-xl:active, .btn-xl.active, .open > .btn-xl.dropdown-toggle {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #374051;
+  border-color: #333b4b;
 }
 .btn-xl:active:hover, .btn-xl:active:focus, .btn-xl:active.focus, .btn-xl.active:hover, .btn-xl.active:focus, .btn-xl.active.focus, .open > .btn-xl.dropdown-toggle:hover, .open > .btn-xl.dropdown-toggle:focus, .open > .btn-xl.dropdown-toggle.focus {
   color: white;
-  background-color: #dcab01;
-  border-color: #b48b01;
+  background-color: #292f3c;
+  border-color: #181c23;
 }
 .btn-xl:active, .btn-xl.active, .open > .btn-xl.dropdown-toggle {
   background-image: none;
 }
 .btn-xl.disabled:hover, .btn-xl.disabled:focus, .btn-xl.disabled.focus, .btn-xl[disabled]:hover, .btn-xl[disabled]:focus, .btn-xl[disabled].focus, fieldset[disabled] .btn-xl:hover, fieldset[disabled] .btn-xl:focus, fieldset[disabled] .btn-xl.focus {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #4c586f;
+  border-color: #4c586f;
 }
 .btn-xl .badge {
-  color: #fed136;
+  color: #4c586f;
   background-color: white;
 }
 
 #mainNav {
-  background-color: #212529;
+  background-color: transparent;
 }
 #mainNav .navbar-toggler {
   font-size: 12px;
   right: 0;
   padding: 13px;
-  text-transform: uppercase;
   color: white;
   border: 0;
-  background-color: #fed136;
+  background-color: #6cbf84;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 #mainNav .navbar-brand {
-  color: #fed136;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #fec503;
+  color: #6cbf84;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
-  font-size: 90%;
-  font-weight: 400;
+  font-size: 18px;
   padding: 0.75em 0;
   letter-spacing: 1px;
   color: white;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #fed136;
+  color: #6cbf84;
 }
 
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 25px;
     padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s, background-color 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s, background-color 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s, background-color 0.3s;
     border: none;
-    background-color: transparent;
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
@@ -196,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #212529;
+    background-color: #613A43;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -232,23 +223,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 header {
-  background-image: url("../img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
   text-align: center;
-  color: white;
+  background-color: #ffbcc3;
+  color: #fff;
 }
 header .intro-text {
   padding-top: 100px;
   padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 22px;
   line-height: 22px;
@@ -256,7 +240,6 @@ header .intro-text .intro-lead-in {
 }
 header .intro-text .intro-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   font-weight: 700;
   font-size: 50px;
   line-height: 50px;
@@ -277,7 +260,6 @@ header .intro-text .intro-heading {
   }
   header .intro-text .intro-heading {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
     font-weight: 700;
     font-size: 72px;
     line-height: 75px;
@@ -515,14 +497,12 @@ footer {
 footer span.copyright {
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   text-transform: none;
 }
 footer ul.quicklinks {
   margin-bottom: 0;
   line-height: 40px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   text-transform: none;
 }
 
@@ -544,7 +524,7 @@ ul.social-buttons li a {
   transition: all 0.3s;
 }
 ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
-  background-color: #fed136;
+  background-color: #6cbf84;
 }
 
 .btn:focus,
@@ -631,12 +611,12 @@ ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li
 
 ::-moz-selection {
   text-shadow: none;
-  background: #fed136;
+  background: #6cbf84;
 }
 
 ::selection {
   text-shadow: none;
-  background: #fed136;
+  background: #6cbf84;
 }
 
 img::selection {
@@ -648,7 +628,7 @@ img::-moz-selection {
 }
 
 body {
-  webkit-tap-highlight-color: #fed136;
+  webkit-tap-highlight-color: #6cbf84;
 }
 
 /*# sourceMappingURL=oli.css.map */

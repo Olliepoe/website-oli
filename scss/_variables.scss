@@ -2,7 +2,8 @@
 
 // Gray and Brand Colors for use across theme
 
-$theme-primary:    #fed136;
+$theme-primary:    #6cbf84;
+$theme-secondary:  #4c586f;
 $theme-danger:     #e74c3c;
 
 $gray-base:			#000 !default;
@@ -13,4 +14,4 @@ $gray-light:		lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:		lighten($gray-base, 93.5%) !default; // #eee
 
 $gray-900: #212529 !default;
-$primary: #fed136 !default;
+$primary: $theme-primary !default;
