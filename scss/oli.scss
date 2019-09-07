@@ -53,10 +53,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
-.bg-light-gray {
-    background-color: $gray-lighter;
-}
-
 .bg-darkest-gray {
     background-color: $gray-darker;
 }
@@ -228,11 +224,23 @@ header {
 }
 
 // Global Section Styles
+section.main-section .container {
+    background-color: lightcyan;
+}
+
+section.main-section:first-of-type {
+    padding-top: 150px;
+}
+
+@media(min-width:768px) {
+    section.main-section .container {
+        padding: 150px 0;
+    }
+}
 
 section {
-    padding: 100px 0;
     h2.section-heading {
-        font-size: 40px;
+        font-size: 50px;
         margin-top: 0;
         margin-bottom: 15px;
     }
@@ -247,17 +255,21 @@ section {
     }
 }
 
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
+#wiebenik .list-wrapper {
+    width: 575px;
+    display: inline-block;
+
+    ul {
+        list-style: none;
+        font-size: 22px;
+        text-align: left;
+        li {
+            padding: 5px 0;
+        }
+        i {
+            width: 40px;
+        }
     }
-}
-
-// Services Section
-
-.service-heading {
-    margin: 15px 0;
-    text-transform: none;
 }
 
 // Timeline
