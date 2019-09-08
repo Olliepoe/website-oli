@@ -179,7 +179,7 @@ section.main-section .container {
 }
 @media(min-width:768px) {
     section.main-section:first-of-type {
-      padding-top: 150px;
+      margin-top: 150px;
       .container {
         padding-top: 150px;
       }
@@ -202,10 +202,12 @@ ul.oli-list {
     font-size: 22px;
     text-align: left;
     li {
-        padding: 5px 0;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
     }
     i {
-        width: 40px;
+        flex: 0 0 40px;
     }
 }
 
@@ -295,7 +297,7 @@ ul.oli-list {
 }
 
 // Contact Section
-section#contact {
+#contact {
     background-image: url('../img/contact-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -303,11 +305,11 @@ section#contact {
     .container {
         background: none;
     }
+    .d-flex {
+        flex-direction: column;
+    }
     .oli-list, .section-heading {
         color: $theme-header;
-    }
-    .oli-list {
-        padding-left: 75px;
     }
     .image {
         background-image: url('../img/oli.jpg');
@@ -317,14 +319,16 @@ section#contact {
         height: 300px;
         border-radius: 50%;
     }
-    .content-wrapper {
-        align-self: center;
-    }
 }
 
 @media(min-width:768px) {
-  #contact .content-wrapper {
-    width: 375px;
+  #contact {
+    .d-flex {
+      flex-direction: row;
+    }
+    .oli-list {
+        padding-left: 75px;
+    }
   }
 }
 

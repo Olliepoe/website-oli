@@ -1,7 +1,7 @@
 # Website oli
 
 ## dev
-pscp C:\Repository\website-oli\robots.txt pi@192.168.178.36:/home/pi/oli
+pscp -r C:\Repository\website-oli\dist pi@192.168.178.36:/home/pi/oli
 
 ## Developing Using Source Files
 To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
