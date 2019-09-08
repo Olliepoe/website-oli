@@ -36,18 +36,15 @@ h1, h2, h3, h4, h5, h6 {
 
 // Custom Navigation Bar
 #mainNav {
-    background-color: transparent;
+    background-color: $theme-header;
+
     .navbar-toggler {
-        font-size: 12px;
-        right: 0;
+        font-size: 20px;
         padding: 13px;
         color: white;
-        border: 0;
-        background-color: $theme-primary;
-        @include heading-font;
+        background-color: $theme-secondary;
     }
     .navbar-brand {
-        @include heading-font;
         &.active,
         &:active,
         &:focus,
@@ -75,10 +72,9 @@ h1, h2, h3, h4, h5, h6 {
     #mainNav {
         padding-top: 25px;
         padding-bottom: 25px;
-        -webkit-transition: padding-top 0.3s, padding-bottom 0.3s,background-color .3s;
-        -moz-transition: padding-top 0.3s, padding-bottom 0.3s,background-color .3s;
         transition: padding-top 0.3s, padding-bottom 0.3s,background-color .3s;
         border: none;
+        background-color: transparent;
         .navbar-brand {
             font-size: 1.75em;
             -webkit-transition: all 0.3s;
@@ -106,7 +102,6 @@ h1, h2, h3, h4, h5, h6 {
 
 @media(min-width:768px) {
     .navbar-custom {
-        background-color: transparent;
         padding: 25px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
@@ -125,48 +120,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
+    display: flex;
+    align-items: center;
+    height: 100vh;
     text-align: center;
     background-color: $theme-pink;
     color: #fff;
-    .intro-text {
-        padding-top: 100px;
-        padding-bottom: 50px;
-        .intro-lead-in {
-            @include heading-font;
-            font-style: italic;
-            font-size: 22px;
-            line-height: 22px;
-            margin-bottom: 25px;
-        }
-        .intro-heading {
-            @include heading-font;
-            font-weight: 700;
-            font-size: 50px;
-            line-height: 50px;
-            margin-bottom: 25px;
-        }
+    .intro-lead-in {
+        @include heading-font;
+        font-style: italic;
+        font-size: 22px;
+        line-height: 22px;
+        margin-bottom: 25px;
+    }
+    .intro-heading {
+        @include heading-font;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 50px;
+        margin-bottom: 25px;
     }
 }
 
 @media(min-width:768px) {
     header {
-        .intro-text {
-            padding-top: 300px;
-            padding-bottom: 200px;
-            .intro-lead-in {
-                @include serif-font;
-                font-style: italic;
-                font-size: 40px;
-                line-height: 40px;
-                margin-bottom: 25px;
-            }
-            .intro-heading {
-                @include heading-font;
-                font-weight: 700;
-                font-size: 72px;
-                line-height: 75px;
-                margin-bottom: 50px;
-            }
+        .intro-lead-in {
+            @include serif-font;
+            font-style: italic;
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 25px;
+        }
+        .intro-heading {
+            @include heading-font;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 75px;
+            margin-bottom: 50px;
         }
     }
 }
@@ -176,12 +166,6 @@ section.main-section .container {
     background-color: $theme-mainbg;
 }
 
-section.main-section:first-of-type {
-    padding-top: 150px;
-    .container {
-        padding-top: 150px;
-    }
-}
 #watzoekik .container {
     padding-bottom: 150px;
 }
@@ -189,35 +173,31 @@ section:last-of-type {
     margin-top: 150px;
 }
 
+section.main-section .container {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
 @media(min-width:768px) {
-    section.main-section .container {
-        padding: 75px 0;
+    section.main-section:first-of-type {
+      padding-top: 150px;
+      .container {
+        padding-top: 150px;
+      }
+    }
+    .content-wrapper {
+        width: 600px;
+        display: inline-block;
     }
 }
 
-section {
-    h2.section-heading {
-        font-size: 50px;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-    h3.section-subheading {
-        font-size: 16px;
-        @include serif-font;
-        text-transform: none;
-        font-style: italic;
-        font-weight: 400;
-        margin-bottom: 75px;
-        color: #fff;
-    }
-}
-
-.content-wrapper {
-    width: 600px;
-    display: inline-block;
+.section-heading {
+    font-size: 45px;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 ul.oli-list {
+    padding-left: 0;
     list-style: none;
     font-size: 22px;
     text-align: left;
@@ -244,7 +224,7 @@ ul.oli-list {
         text-align: left;
         margin-left: 200px;
 
-        h2, h3 {
+        h3 {
             letter-spacing: 1.5px;
             font-weight: 400;
             font-size: 1.4em;
@@ -295,6 +275,25 @@ ul.oli-list {
     }
 }
 
+@media(max-width:767px) {
+  #watdeedik .timeline {
+    margin-left: 50px;
+    padding: 30px;
+    .event {
+      &:before {
+        left: 0;
+      }
+      &:after {
+        left: -37.85px;
+      }
+
+      h3 {
+        padding-top: 30px;
+      }
+    }
+  }
+}
+
 // Contact Section
 section#contact {
     background-image: url('../img/contact-bg.jpg');
@@ -307,9 +306,12 @@ section#contact {
     .oli-list, .section-heading {
         color: $theme-header;
     }
-    .content-wrapper {
-        width: 375px;
-    }
+}
+
+@media(min-width:768px) {
+  #contact .content-wrapper {
+    width: 375px;
+  }
 }
 
 // Footer
