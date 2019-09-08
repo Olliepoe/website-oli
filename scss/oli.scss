@@ -6,6 +6,7 @@
 body {
     overflow-x: hidden;
     @include heading-font;
+    color: #613a43;
 }
 
 .text-muted {
@@ -215,16 +216,25 @@ header {
 
 // Global Section Styles
 section.main-section .container {
-    background-color: lightcyan;
+    background-color: #bce4e4;
 }
 
 section.main-section:first-of-type {
     padding-top: 150px;
+    .container {
+        padding-top: 150px;
+    }
+}
+#watzoekik .container {
+    padding-bottom: 150px;
+}
+section:last-of-type {
+    margin-top: 150px;
 }
 
 @media(min-width:768px) {
     section.main-section .container {
-        padding: 150px 0;
+        padding: 75px 0;
     }
 }
 
@@ -250,17 +260,15 @@ section {
     display: inline-block;
 }
 
-#wiebenik {
-    ul {
-        list-style: none;
-        font-size: 22px;
-        text-align: left;
-        li {
-            padding: 5px 0;
-        }
-        i {
-            width: 40px;
-        }
+ul.oli-list {
+    list-style: none;
+    font-size: 22px;
+    text-align: left;
+    li {
+        padding: 5px 0;
+    }
+    i {
+        width: 40px;
     }
 }
 
@@ -287,8 +295,8 @@ section {
 
         .event {
             border-bottom: 1px dashed $theme-pink;
-            padding-bottom: (50px * 0.5);
-            margin-bottom: 50px;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
             position: relative;
             max-width: 400px;
 
@@ -327,23 +335,18 @@ section {
 
 // Contact Section
 section#contact {
-    background-color: $gray-darker;
-    background-image: url('../img/map-image.png');
+    background-image: url('../img/contact-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    .section-heading {
-        color: white;
+    background-size: cover;
+    .container {
+        background: none;
     }
-    .info {
-        font-size: 16px;
-        color: #fff;
-        display: inline-block;
-        width: 200px;
-        text-align: left;
-
-        .fa {
-            padding-right: 12px;
-        }
+    .oli-list, .section-heading {
+        color: $theme-header;
+    }
+    .content-wrapper {
+        width: 375px;
     }
 }
 
