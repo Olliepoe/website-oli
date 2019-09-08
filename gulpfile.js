@@ -1,48 +1,52 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var merge = require('merge-stream');
+const { src, dest, parallel, watch } = require('gulp');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const cleanCSS = require('gulp-clean-css');
+const rename = require("gulp-rename");
+const uglify = require('gulp-uglify');
+const merge = require('merge-stream');
 
 // Minify compiled CSS
-function minifyCss() {
-    return gulp.src('css/oli.css')
+function css() {
+    return src('scss/oli.scss')
+        .pipe(sass())
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/css'));
+        .pipe(dest('dist/css'));
 };
 
 // Minify JS
-function minifyJs() {
-    return gulp.src('js/oli.js')
+function js() {
+    return src('js/oli.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(dest('dist/js'));
 };
 
 // Bring third party dependencies from node_modules into vendor directory
 function copy() {
-    var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*').pipe(gulp.dest('./dist/vendor/bootstrap'));
-    var fontAwesome = gulp.src('./node_modules/font-awesome/**/*').pipe(gulp.dest('./dist/vendor/font-awesome'));
-    var jquery = gulp.src([
+    const bootstrap = src('./node_modules/bootstrap/dist/**/*').pipe(dest('./dist/vendor/bootstrap'));
+    const fontAwesome = src('./node_modules/font-awesome/**/*').pipe(dest('./dist/vendor/font-awesome'));
+    const jquery = src([
         './node_modules/jquery/dist/*',
         '!./node_modules/jquery/dist/core.js'
-    ]).pipe(gulp.dest('./dist/vendor/jquery'));
+    ]).pipe(dest('./dist/vendor/jquery'));
     return merge(bootstrap, fontAwesome, jquery);
 }
 
 function html() {
-    const img = gulp.src('img/**/*').pipe(gulp.dest('dist/img'));
-    const html = gulp.src(['index.html', 'robots.txt']).pipe(gulp.dest('dist'));
+    const img = src('img/**/*').pipe(dest('dist/img'));
+    const html = src(['index.html', 'robots.txt']).pipe(dest('dist'));
     return merge(img,html);
 }
 
-function css() {
-    return gulp.src('scss/oli.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('css'));
+function watchFiles() {
+    watch("./scss/**/*", css);
+    watch("./js/**/*", js);
+    watch("./*.html", html);
 }
 
-// Run everything
-gulp.task("default", gulp.series(css, gulp.parallel(minifyJs, minifyCss, copy, html)));
+exports.css = css;
+exports.js = js;
+exports.watch = watchFiles;
+exports.default = parallel(js, css, copy, html);
