@@ -31,7 +31,8 @@ function copy() {
         './node_modules/jquery/dist/*',
         '!./node_modules/jquery/dist/core.js'
     ]).pipe(dest('./dist/vendor/jquery'));
-    return merge(bootstrap, fontAwesome, jquery);
+    const easing = src('./node_modules/jquery.easing/**/*').pipe(dest('./dist/vendor/jquery.easing'));
+    return merge(bootstrap, fontAwesome, jquery, easing);
 }
 
 function html() {

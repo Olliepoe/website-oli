@@ -2,36 +2,10 @@
 @import "mixins.scss";
 
 // Global Components
-
 body {
     overflow-x: hidden;
     @include heading-font;
-    color: #613a43;
-}
-
-.text-muted {
-    color: $gray-light;
-}
-
-.text-primary {
-    color: $theme-primary;
-}
-
-p {
-    font-size: 14px;
-    line-height: 1.75;
-}
-
-p.large {
-    font-size: 16px;
-}
-
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
-    outline: none;
+    color: $theme-header;
 }
 
 a {
@@ -42,17 +16,11 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    color: darken($theme-primary, 10%);
+  color: darken($theme-primary, 10%);
+  outline: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @include heading-font;
-    font-weight: 700;
-}
-
-// Restyled Primary Buttons
-.btn-primary {
-    @include button-variant(white, $theme-secondary, $theme-secondary);
     @include heading-font;
     font-weight: 700;
 }
@@ -75,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
         padding: 13px;
         color: white;
         border: 0;
-        background-color: $primary;
+        background-color: $theme-primary;
         @include heading-font;
     }
     .navbar-brand {
@@ -97,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
                 @include heading-font;
                 &.active,
                 &:hover {
-                    color: $primary;
+                    color: $theme-primary;
                 }
             }
         }
@@ -156,17 +124,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-// Navbar Change on Scroll
-@media(min-width:768px) {
-    .navbar-custom.affix {
-        background-color: $gray-darker;
-        padding: 10px 0;
-        .navbar-brand {
-            font-size: 1.5em;
-        }
-    }
-}
-
 header {
     text-align: center;
     background-color: $theme-pink;
@@ -216,7 +173,7 @@ header {
 
 // Global Section Styles
 section.main-section .container {
-    background-color: #bce4e4;
+    background-color: $theme-mainbg;
 }
 
 section.main-section:first-of-type {
@@ -300,6 +257,11 @@ ul.oli-list {
             position: relative;
             max-width: 400px;
 
+            p {
+              font-size: 14px;
+              line-height: 1.75;
+            }
+
             &:last-of-type {
                 padding-bottom: 0;
                 margin-bottom: 0;
@@ -365,13 +327,6 @@ footer {
         @include heading-font;
         text-transform: none;
     }
-}
-
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn:active:focus {
-    outline: none;
 }
 
 // Highlight Color Customization
