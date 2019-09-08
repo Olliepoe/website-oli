@@ -306,6 +306,20 @@ section#contact {
     .oli-list, .section-heading {
         color: $theme-header;
     }
+    .oli-list {
+        padding-left: 75px;
+    }
+    .image {
+        background-image: url('../img/oli.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+    .content-wrapper {
+        align-self: center;
+    }
 }
 
 @media(min-width:768px) {
