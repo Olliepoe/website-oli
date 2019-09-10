@@ -26,6 +26,8 @@
         offset: 56
     });
 
+    $('.copyright date').html(new Date().getFullYear());
+
     $(window).scroll(function() {
         $("#mainNav").toggleClass('navbar-shrink', $("#mainNav").offset().top > 100);
     }).scroll();
