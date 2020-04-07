@@ -312,9 +312,10 @@ ul.oli-list {
         color: $theme-header;
     }
     .image {
-        background-image: url('../img/oli.jpg');
+        background-image: url('../img/oli.png');
         background-position: center;
         background-repeat: no-repeat;
+        background-size: 100%;
         width: 300px;
         height: 300px;
         border-radius: 50%;

@@ -1,7 +1,28 @@
 # Website oli
 
 ## dev
-pscp -r C:\Repository\website-oli\dist pi@192.168.178.36:/home/pi/oli
+
+`pscp -r C:\Repository\website-oli\dist pi@192.168.178.66:/home/pi/oli/www`
+
+`docker rm website-oli`
+
+`docker create \
+  --name=website-oli \
+  --cap-add=NET_ADMIN \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/Amsterdam \
+  -e URL=ollekepeters.nl \
+  -e SUBDOMAINS=www, \
+  -e EMAIL=oli@pheelix.dev \
+  -e VALIDATION=http \
+  -p 443:443 \
+  -p 80:80 \
+  -v /home/pi/oli:/config \
+  --restart unless-stopped \
+  linuxserver/letsencrypt:1.3.0-ls103`
+  
+`docker start website-oli`
 
 ## Developing Using Source Files
 To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
