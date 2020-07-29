@@ -1,9 +1,12 @@
 # Website oli
 
-## dev
+### build: 
+`gulp`
 
-`pscp -r C:\Repository\website-oli\dist pi@192.168.178.66:/home/pi/oli/www`
+### copy:
+`pscp -r C:\Repository\website-oli\dist\* pi@192.168.178.66:/home/pi/oli/www`
 
+### docker container:
 `docker rm website-oli`
 
 `docker create \
@@ -23,15 +26,6 @@
   linuxserver/letsencrypt:1.3.0-ls103`
   
 `docker start website-oli`
-
-## Developing Using Source Files
-To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
-* Run `npm install` in the root directory
-* Run `gulp dev` and edit the files as needed
-
-If you need to update the plugins included with this template, simply run the following tasks:
-* First run `npm update` to update the dependencies
-* Then run `gulp copy` to copy the new versions to their proper destinations
 
 # Creator
 forked from [Agency](http://startbootstrap.com/template-overviews/agency/)
