@@ -1,4 +1,7 @@
 node_modules
 css
-docs
 .idea
+docs/vendor/jquery.easing/bower_components
+docs/vendor/jquery.easing/example
+docs/vendor/font-awesome/less
+docs/vendor/font-awesome/scss
