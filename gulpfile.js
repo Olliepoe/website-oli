@@ -5,6 +5,7 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require("gulp-rename");
 const uglify = require('gulp-uglify');
 const merge = require('merge-stream');
+const target = 'docs';
 
 // Minify compiled CSS
 function css() {
@@ -12,7 +13,7 @@ function css() {
         .pipe(sass())
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('dist/css'));
+        .pipe(dest(target + '/css'));
 };
 
 // Minify JS
@@ -20,24 +21,24 @@ function js() {
     return src('js/oli.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('dist/js'));
+        .pipe(dest(target + '/js'));
 };
 
 // Bring third party dependencies from node_modules into vendor directory
 function copy() {
-    const bootstrap = src('./node_modules/bootstrap/dist/**/*').pipe(dest('./dist/vendor/bootstrap'));
-    const fontAwesome = src('./node_modules/font-awesome/**/*').pipe(dest('./dist/vendor/font-awesome'));
+    const bootstrap = src('./node_modules/bootstrap/dist/**/*').pipe(dest('./' + target + '/vendor/bootstrap'));
+    const fontAwesome = src('./node_modules/font-awesome/**/*').pipe(dest('./' + target + '/vendor/font-awesome'));
     const jquery = src([
         './node_modules/jquery/dist/*',
         '!./node_modules/jquery/dist/core.js'
-    ]).pipe(dest('./dist/vendor/jquery'));
-    const easing = src('./node_modules/jquery.easing/**/*').pipe(dest('./dist/vendor/jquery.easing'));
+    ]).pipe(dest('./' + target + '/vendor/jquery'));
+    const easing = src('./node_modules/jquery.easing/**/*').pipe(dest('./' + target + '/vendor/jquery.easing'));
     return merge(bootstrap, fontAwesome, jquery, easing);
 }
 
 function html() {
-    const img = src('img/**/*').pipe(dest('dist/img'));
-    const html = src(['index.html', 'robots.txt']).pipe(dest('dist'));
+    const img = src('img/**/*').pipe(dest(target + '/img'));
+    const html = src(['index.html', 'robots.txt']).pipe(dest(target));
     return merge(img,html);
 }
 
