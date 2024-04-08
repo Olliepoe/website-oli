@@ -190,6 +190,21 @@ section.main-section .container {
     }
 }
 
+@media(min-width:992px) {
+    .timeline-wrapper {
+        width: 50%;
+    }
+    .timeline-title {
+        margin-left: 150px;
+    }
+}
+
+@media(max-width:991px) {
+    .timeline-title h4 {
+        margin-left: 84px !important;
+    }
+}
+
 .section-heading {
     font-size: 45px;
     margin-top: 0;
@@ -217,14 +232,18 @@ ul.oli-list {
     }
 
     // Timeline
+    .timeline-wrapper {
+        margin-top: 24px;
+    }
+
     .timeline {
-        border-left: 4px solid pink;
+        border-left: 4px solid $theme-pink;
         position: relative;
         line-height: 1.4em;
         padding: 50px;
         list-style: none;
         text-align: left;
-        margin-left: 200px;
+        margin-left: 150px;
 
         h3 {
             letter-spacing: 1.5px;
@@ -258,7 +277,7 @@ ul.oli-list {
             }
 
             &:before {
-                left: -200px;
+                left: -170px;
                 content: attr(data-date);
                 text-align: right;
             }

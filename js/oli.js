@@ -27,6 +27,10 @@
     });
 
     $('.copyright date').html(new Date().getFullYear());
+    var birthday = new Date(1997, 1, 11).getTime();
+    var years = new Date(Date.now() - birthday).getUTCFullYear();
+    var age =  Math.abs(years - 1970);
+    $('.age').append(age + ' jaar');
 
     $(window).scroll(function() {
         $("#mainNav").toggleClass('navbar-shrink', $("#mainNav").offset().top > 100);
